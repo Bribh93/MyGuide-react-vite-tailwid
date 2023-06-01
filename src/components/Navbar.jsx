@@ -22,7 +22,7 @@ export const Navbar = () => {
             <div className=''>
                 <h1 className='mt-16 pr-14 font-bold'>MY HOUSE</h1>
                 <div className='grid gap-y-4 mt-8 '>
-                    <NavLink to="/houseList" className='mt-4 focus:border-l-8 focus:border-[#22BAFE]'><MdSource className='inline-flex items-center mx-6'/> House List</NavLink>
+                    <NavLink to="/listHouse" className='mt-4 focus:border-l-8 focus:border-[#22BAFE]'><MdSource className='inline-flex items-center mx-6'/> House List</NavLink>
                     <NavLink to="/myFavorite" className='mt-4 focus:border-l-8 focus:border-[#22BAFE]'><MdOutlineFolderCopy className='inline-flex items-center mx-6'/>My Favorite</NavLink>
                     <NavLink to="/customize" className='mr-2 mt-4 focus:border-l-8 focus:border-[#22BAFE]'><MdOutlineManageAccounts className='inline-flex items-center mx-6'/>Customize</NavLink>
                 </div>

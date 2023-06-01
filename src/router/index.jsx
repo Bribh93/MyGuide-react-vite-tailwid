@@ -2,11 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import { Dashboard } from "../pages/Dashboard";
 import { Message } from "../pages/Message";
 import { FavoriteList } from "../pages/FavoriteList";
-import { HouseList } from "../pages/HouseList";
+
 import { MyFavorite } from "../pages/MyFavorite";
 import { Customize } from "../pages/Customize";
 import { NotFound } from "../pages/NotFound";
 import { LayoutPublic } from "../layout/LayoutPublic";
+import { ListHouse } from "../pages/ListHouse";
+import { HouseList } from "../pages/HouseList";
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +29,11 @@ export const router = createBrowserRouter([
             {
                 path:'/message',
                 element: <Message/>,
+                
+            },
+            {
+                path:'/listHouse',
+                element: <ListHouse/>,
                 
             },
             {

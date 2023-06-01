@@ -1,7 +1,18 @@
-
+import { useState, useEffect } from "react"
+import {MdOutlineRemoveRedEye} from "react-icons/md"
 
 export const FavoriteList = () => {
+  
   return (
-    <div>Favorite List</div>
+    <>
+        <h1>FavoriteList</h1>
+      
+
+    </>
+    //como mostrar los favoritos aqui
+
+
+
+    
   )
 }

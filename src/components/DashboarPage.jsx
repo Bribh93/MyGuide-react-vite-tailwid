@@ -1,11 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HouseList } from '../pages/HouseList';
 
-export const DashboarPage = () => {
+import {MdOutlineExpandMore} from "react-icons/md"
 
-    const handleSubmit = (e)  => {
-        e.preventDefault();
-    }
+import bosque from '../assets/House.jpg'
+import casa1 from '../assets/House1.png'
+import casa from '../assets/bosque.png'
+
+
+
+
+
+
+export const DashboarPage = () => {
+    
+     const [houses, setHouses] = useState([
+        {
+            id: 1,
+            name: 'Ultra Lux villa 460m2',
+            imagen: bosque,
+            location: 'Munich Bavaria, DE',
+            dia: 38,
+            price: '$400.000,00',
+            room: '6',
+            restroom: '2',
+            squre: '460m2',
+            description: 'This modern property opens the door for a great opportunity to secure a villa in this popular...',
+            views: 934
+        },    
+        {
+            id: 2,
+            name: 'Ultra Lux Bodrum, 245m2',
+            imagen: casa1,
+            location: 'La Habana, CU',
+            dia: 14,
+            price: '$800.000,00',
+            room: '4',
+            restroom: '3',
+            squre: '543m2',
+            description: 'This modern property opens the door for a great opportunity to secure a villa in this popular...',
+            views: 654
+        },    
+        {
+            id: 3,
+            name: 'Premium Class Villa 500m2',
+            imagen: casa,
+            location: 'Rio de Janerio, BR',
+            dia: 44,
+            price: '$600.000,00',
+            room: '8',
+            restroom: '4',
+            squre: '1245m2',
+            description: 'This modern property opens the door for a great opportunity to secure a villa in this popular...',
+            views: 789
+        },    
+    ]);
+
 
   return (
     <>
@@ -33,7 +83,7 @@ export const DashboarPage = () => {
         </div>
         <section className='mt-14 mx-36 text-left'>
             <h1 className='text-left font-semibold text-xl text-gray-700'>Find a House</h1>
-            <form onSubmit={handleSubmit} className='grid grid-cols-6 mt-8 gap-6'>
+            <form className='grid grid-cols-6 mt-8 gap-6'>
                 <div className='col-span-3 '>
                     <label htmlFor='location' className='text-sm text-left text-gray-500'>Location</label>
                     <br/>
@@ -43,6 +93,7 @@ export const DashboarPage = () => {
                     type='text'
                     placeholder=''
                     id='location'
+                    
                     />
                 </div>
                 <div>
@@ -54,6 +105,8 @@ export const DashboarPage = () => {
                     type='text'
                     placeholder=''
                     id='minimum'
+                    name='minimum'
+                    
                     />
                 </div>
                 <div>
@@ -147,7 +200,36 @@ export const DashboarPage = () => {
             </form>
         </section>
         <section>
-            <HouseList/>
+
+        
+                <div className=' flex items-center justify-around mt-14'>
+                    <h1 className='text-lg font-semibold text-gray-700'>Houses from Landlords</h1>
+                    <div className='flex items-center gap-10'>
+                        <p className='text-lg font-semibold text-gray-700'>456 <span className='text-gray-500 font-light'>villa found</span></p>
+                        <button className='flex items-center border-2 border-gray-700 rounded-md px-4 py-1'>Filter by <MdOutlineExpandMore/></button>
+                    </div>
+                </div>
+               
+
+            {houses.map(house => {
+                return <HouseList 
+                key={house.id} 
+                imagen={house.imagen}
+                name={house.name}
+                location={house.location}
+                dia={house.dia}
+                price={house.price}
+                room={house.room}
+                restroom={house.restroom}
+                squre={house.squre}
+                description={house.description}
+                views={house.views}
+                houses={houses}
+                />  
+            })}
+            
+            
+            
         </section>
     </div>
     </>
